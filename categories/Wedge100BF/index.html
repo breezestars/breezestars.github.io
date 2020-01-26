@@ -141,6 +141,87 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/" class="image is-7by1">
+            <img class="thumbnail" src="https://upload.wikimedia.org/wikipedia/commons/6/66/OpenBMC_logo.png" alt="Upgrade OpenBMC and CPLD in Wedge100BF">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-01-26T09:27:24.000Z">2020-01-26</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Wedge100BF/">Wedge100BF</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 204 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/">Upgrade OpenBMC and CPLD in Wedge100BF</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h2><ul>
+<li>Edgecore Wedge100BF-32X</li>
+<li>USB with at least 4Gb</li>
+<li>OpenBMC and CPLD upgrade files</li>
+</ul>
+<p>Please unzip all files and copy to USB root directory</p>
+<p>Note: If you need upgrade files, please contact switch vendor or following contact window</p>
+<p>Edgecore Network: <a href="mailto:jimmy_ou@edge-core.com">jimmy_ou@edge-core.com</a></p>
+<p><strong>*<u>Warning: It will be sugget to contact switch vendor to upgrade firmware, if user upgrade fail then switch might be brick. The switch will need to RMA and the vendor might charge for this.*</u></strong></p>
+<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><h3 id="connect-to-console"><a href="#connect-to-console" class="headerlink" title="connect to console"></a>connect to console</h3><p>After OpenBMC is ready, loginin with <code>root/0penBmc</code> </p>
+<h4 id="Upgrade-OpenBMC"><a href="#Upgrade-OpenBMC" class="headerlink" title="Upgrade OpenBMC"></a>Upgrade OpenBMC</h4><p>Confirm original OpenBMC version</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/issue</span><br></pre></td></tr></table></figure>
+
+<p>Check MTD configuration</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/mtd</span><br></pre></td></tr></table></figure>
+
+<p>Install new OpenBMC image(flash-mavericks) to MTD(flash0)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flashcp -v flash-mavericks /dev/mtd5</span><br></pre></td></tr></table></figure>
+
+<p>and  <code>Reboot</code></p>
+<h4 id="Upgrade-CPLD"><a href="#Upgrade-CPLD" class="headerlink" title="Upgrade CPLD"></a>Upgrade CPLD</h4><p>Confirm original CPLD version</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">i2cget -f -y 12 0x31 0x1</span><br><span class="line">i2cget -f -y 12 0x31 0x2</span><br></pre></td></tr></table></figure>
+
+<p>Set <code>CPLD_UPPER_JTAG_SEL</code> and <code>CPLD_JTAG_SEL</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">devmem 0x1e6e2080 32 0xE0CA0002</span><br><span class="line"><span class="built_in">echo</span> out &gt; /tmp/gpionames/CPLD_JTAG_SEL/direction</span><br><span class="line"><span class="built_in">echo</span> 1 &gt; /tmp/gpionames/CPLD_JTAG_SEL/value</span><br></pre></td></tr></table></figure>
+
+<p>Install CPLD code</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jbi -r -aPROGRAM -gc102 -gi101 -go103 -gs100 &lt;file path&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>*<u>Do not power off DUT during installation. System shall reboot automatically after updating lower CPLD code*</u></strong></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/01/26/Upgrade-BIOS-and-EC-in-Wedge100BF/" class="image is-7by1">
             <img class="thumbnail" src="https://i.imgur.com/RvzcmJE.jpg" alt="Upgrade BIOS and EC in Wedge100BF">
         </a>
@@ -249,7 +330,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            2
+                            3
                         </p>
                     </a>
                 </div>
@@ -386,7 +467,7 @@
                 <span class="level-item">Wedge100BF</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li>
             </ul>
@@ -414,6 +495,25 @@
         
         <article class="media">
             
+            <a href="/2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://upload.wikimedia.org/wikipedia/commons/6/66/OpenBMC_logo.png" alt="Upgrade OpenBMC and CPLD in Wedge100BF">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-26T09:27:24.000Z">2020-01-26</time></div>
+                    <a href="/2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Upgrade OpenBMC and CPLD in Wedge100BF</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Wedge100BF/">Wedge100BF</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/01/26/Upgrade-BIOS-and-EC-in-Wedge100BF/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://i.imgur.com/RvzcmJE.jpg" alt="Upgrade BIOS and EC in Wedge100BF">
@@ -467,7 +567,7 @@
                     <span class="level-item">January 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -488,7 +588,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Barefoot/">
                         <span class="tag">Barefoot</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -502,7 +602,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Wedge100BF/">
                         <span class="tag">Wedge100BF</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -530,6 +630,25 @@
         
         <article class="media">
             
+            <a href="/2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://upload.wikimedia.org/wikipedia/commons/6/66/OpenBMC_logo.png" alt="Upgrade OpenBMC and CPLD in Wedge100BF">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-26T09:27:24.000Z">2020-01-26</time></div>
+                    <a href="/2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Upgrade OpenBMC and CPLD in Wedge100BF</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Wedge100BF/">Wedge100BF</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/01/26/Upgrade-BIOS-and-EC-in-Wedge100BF/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://i.imgur.com/RvzcmJE.jpg" alt="Upgrade BIOS and EC in Wedge100BF">
@@ -583,7 +702,7 @@
                     <span class="level-item">January 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -604,7 +723,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Barefoot/">
                         <span class="tag">Barefoot</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -618,7 +737,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Wedge100BF/">
                         <span class="tag">Wedge100BF</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 

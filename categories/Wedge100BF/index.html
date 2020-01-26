@@ -152,7 +152,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 204 words)
+                    a minute read (About 205 words)
                 </span>
                 
                 
@@ -174,30 +174,16 @@
 <p>Note: If you need upgrade files, please contact switch vendor or following contact window</p>
 <p>Edgecore Network: <a href="mailto:jimmy_ou@edge-core.com">jimmy_ou@edge-core.com</a></p>
 <p><strong>*<u>Warning: It will be sugget to contact switch vendor to upgrade firmware, if user upgrade fail then switch might be brick. The switch will need to RMA and the vendor might charge for this.*</u></strong></p>
-<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><h3 id="connect-to-console"><a href="#connect-to-console" class="headerlink" title="connect to console"></a>connect to console</h3><p>After OpenBMC is ready, loginin with <code>root/0penBmc</code> </p>
-<h4 id="Upgrade-OpenBMC"><a href="#Upgrade-OpenBMC" class="headerlink" title="Upgrade OpenBMC"></a>Upgrade OpenBMC</h4><p>Confirm original OpenBMC version</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/issue</span><br></pre></td></tr></table></figure>
-
-<p>Check MTD configuration</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/mtd</span><br></pre></td></tr></table></figure>
-
-<p>Install new OpenBMC image(flash-mavericks) to MTD(flash0)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flashcp -v flash-mavericks /dev/mtd5</span><br></pre></td></tr></table></figure>
-
-<p>and  <code>Reboot</code></p>
-<h4 id="Upgrade-CPLD"><a href="#Upgrade-CPLD" class="headerlink" title="Upgrade CPLD"></a>Upgrade CPLD</h4><p>Confirm original CPLD version</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">i2cget -f -y 12 0x31 0x1</span><br><span class="line">i2cget -f -y 12 0x31 0x2</span><br></pre></td></tr></table></figure>
-
-<p>Set <code>CPLD_UPPER_JTAG_SEL</code> and <code>CPLD_JTAG_SEL</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">devmem 0x1e6e2080 32 0xE0CA0002</span><br><span class="line"><span class="built_in">echo</span> out &gt; /tmp/gpionames/CPLD_JTAG_SEL/direction</span><br><span class="line"><span class="built_in">echo</span> 1 &gt; /tmp/gpionames/CPLD_JTAG_SEL/value</span><br></pre></td></tr></table></figure>
-
-<p>Install CPLD code</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jbi -r -aPROGRAM -gc102 -gi101 -go103 -gs100 &lt;file path&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>*<u>Do not power off DUT during installation. System shall reboot automatically after updating lower CPLD code*</u></strong></p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -234,7 +220,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 149 words)
+                    a minute read (About 150 words)
                 </span>
                 
                 
@@ -256,16 +242,16 @@
 <p>Note: If you need upgrade files, please contact switch vendor or following contact window</p>
 <p>Edgecore Network: <a href="mailto:jimmy_ou@edge-core.com">jimmy_ou@edge-core.com</a></p>
 <p><strong>*<u>Warning: It will be sugget to contact switch vendor to upgrade firmware, if user upgrade fail then switch might be brick. The switch will need to RMA and the vendor might charge for this.*</u></strong></p>
-<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><h3 id="connect-to-console"><a href="#connect-to-console" class="headerlink" title="connect to console"></a>connect to console</h3><p>After OpenBMC is ready, loginin with <code>root/0penBmc</code> and use command <code>sol.sh</code> to connect host CPU</p>
-<p>Reboot host CPU and push <code>&lt;ESC&gt;</code> get into BIOS, change to <code>Save&amp;Exit</code> tab and choose <code>UEFI: Built-in EFI Shell</code></p>
-<h4 id="Upgrade-BIOS"><a href="#Upgrade-BIOS" class="headerlink" title="Upgrade BIOS"></a>Upgrade BIOS</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Shell&gt; fs1: &lt;Enter&gt;</span><br><span class="line">fs1:\&gt;<span class="built_in">cd</span> (BIOS path) &lt;Enter&gt;</span><br><span class="line">update.efi</span><br></pre></td></tr></table></figure>
-
-<h4 id="Upgrade-EC"><a href="#Upgrade-EC" class="headerlink" title="Upgrade EC"></a>Upgrade EC</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Shell&gt; fs1: &lt;Enter&gt;</span><br><span class="line">fs1:\&gt;<span class="built_in">cd</span> (EC path) &lt;Enter&gt;</span><br><span class="line">update.efi</span><br></pre></td></tr></table></figure>
-
-<p><strong>*<u>Warning: You must wait 1 min before reboot*</u></strong></p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/01/26/Upgrade-BIOS-and-EC-in-Wedge100BF/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>

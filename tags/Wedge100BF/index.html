@@ -7,12 +7,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Archives: 2020 - Hexo</title>
+<title>Tag: Wedge100BF - Hexo</title>
 
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/Wedge100BF/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
@@ -125,39 +125,85 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-
-<div class="card widget">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
     <div class="card-content">
-        <h3 class="tag is-link">
-        2020
-        </h3>
-        <div class="timeline">
-        
-            <article class="media">
-                
-                <a href="/2020/01/26/Install-Stratum-on-Wedge100BF/" class="media-left">
-                    <p class="image is-64x64">
-                        <img class="thumbnail" src="https://www.opennetworking.org/wp-content/uploads/2019/02/stratum-logo.png" alt="Install Stratum on Wedge100BF">
-                    </p>
-                </a>
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2020-01-26T05:56:11.000Z">2020-01-26</time>
-                        <a href="/2020/01/26/Install-Stratum-on-Wedge100BF/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Install Stratum on Wedge100BF</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-        </div>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">Tags</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Wedge100BF</a></li>
+        </ul>
+        </nav>
     </div>
 </div>
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/01/26/Install-Stratum-on-Wedge100BF/" class="image is-7by1">
+            <img class="thumbnail" src="https://www.opennetworking.org/wp-content/uploads/2019/02/stratum-logo.png" alt="Install Stratum on Wedge100BF">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-01-26T05:56:11.000Z">2020-01-26</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 237 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/01/26/Install-Stratum-on-Wedge100BF/">Install Stratum on Wedge100BF</a>
+            
+        </h1>
+        <div class="content">
+            <p>Stratum: The open source project owned by Open Networking Foundation(ONF)</p>
+<p>The device we used is <strong>Edgecore Wedge100BF-32X</strong>, but all the step are also can be used in Edgecore Wedge100BF-65X</p>
+<h2 id="Device"><a href="#Device" class="headerlink" title="Device"></a>Device</h2><ul>
+<li>Edgecore Wedge100BF-32</li>
+</ul>
+<p><u><em>Notice: Need to check the switch firmware version</em></u></p>
+<ul>
+<li>OpenBMC: 1.0.0.14</li>
+<li>CPLD: 10.1</li>
+<li>BIOS: R1.00.E2 (8/29/2018)</li>
+<li>EC: R04.E01(10/10/2018)</li>
+</ul>
+<h2 id="Step"><a href="#Step" class="headerlink" title="Step"></a>Step</h2><h3 id="Install-ONL-which-contained-ONLPv2"><a href="#Install-ONL-which-contained-ONLPv2" class="headerlink" title="Install ONL which contained ONLPv2"></a>Install ONL which contained ONLPv2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onie-nos-install https://github.com/opennetworkinglab/OpenNetworkLinux/releases/download/onlpv2-dev-1.0.1/ONL-OS_2019-09-17.0112-b2c831f_AMD64_INSTALLED_INSTALLER</span><br></pre></td></tr></table></figure>
+
+<h3 id="Install-Docker"><a href="#Install-Docker" class="headerlink" title="Install Docker"></a>Install Docker</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://get.docker.io | bash</span><br></pre></td></tr></table></figure>
+
+<h3 id="Pull-Stratum-container-image"><a href="#Pull-Stratum-container-image" class="headerlink" title="Pull Stratum container image"></a>Pull Stratum container image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull stratumproject/stratum-bf:8.9.2-4.14.49-OpenNetworkLinux</span><br></pre></td></tr></table></figure>
+
+<h3 id="Create-Stratum-script"><a href="#Create-Stratum-script" class="headerlink" title="Create Stratum script"></a>Create Stratum script</h3><p>Create a shell script called “start-stratum-container.sh” and <code>chmod +x start-stratum-container.sh</code></p>
+<p>The script contain following code</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> -e</span><br><span class="line"><span class="built_in">set</span> -x</span><br><span class="line"></span><br><span class="line">ONLP_MOUNT=$(ls /lib/**/libonlp* | awk <span class="string">'&#123;print "-v " $1 ":" $1 " " &#125;'</span>)</span><br><span class="line"></span><br><span class="line">CONFIG_DIR=<span class="variable">$&#123;CONFIG_DIR:-/root&#125;</span></span><br><span class="line">LOG_DIR=<span class="variable">$&#123;LOG_DIR:-/var/log&#125;</span></span><br><span class="line">SDE_VERSION=<span class="variable">$&#123;SDE_VERSION:-8.9.2&#125;</span></span><br><span class="line">KERNEL_VERSION=$(uname -r)</span><br><span class="line">DOCKER_IMAGE=<span class="variable">$&#123;DOCKER_IMAGE:-stratumproject/stratum-bf&#125;</span></span><br><span class="line">DOCKER_IMAGE_TAG=<span class="variable">$&#123;DOCKER_IMAGE_TAG:-$SDE_VERSION-$KERNEL_VERSION&#125;</span></span><br><span class="line"></span><br><span class="line">docker run -it --privileged \</span><br><span class="line">    -v /dev:/dev -v /sys:/sys  \</span><br><span class="line">    -v /lib/modules/$(uname -r):/lib/modules/$(uname -r) \</span><br><span class="line">    <span class="variable">$ONLP_MOUNT</span> \</span><br><span class="line">    -v /lib/platform-config:/lib/platform-config \</span><br><span class="line">    -v /etc/onl:/etc/onl \</span><br><span class="line">    -p 28000:28000 \</span><br><span class="line">    -v <span class="variable">$CONFIG_DIR</span>:/stratum_configs \</span><br><span class="line">    -v <span class="variable">$LOG_DIR</span>:/stratum_logs \</span><br><span class="line">    <span class="variable">$DOCKER_IMAGE</span>:<span class="variable">$DOCKER_IMAGE_TAG</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Run-Stratum"><a href="#Run-Stratum" class="headerlink" title="Run Stratum"></a>Run Stratum</h3><p>Finally, just execute <code>./start-stratum-container.sh</code> and all is done</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
 
 
 </div>

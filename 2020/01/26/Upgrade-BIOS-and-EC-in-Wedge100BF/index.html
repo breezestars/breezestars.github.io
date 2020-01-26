@@ -240,23 +240,23 @@
     <div class="card-content">
         <h3 class="title is-5 has-text-weight-normal">Comments</h3>
         
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
 <script>
-    var gitalk = new Gitalk({
-        clientID: '829b360a2380a823ad85',
-        clientSecret: '65d03021a1b35d317f6d2857a5949ba235c236dc',
-        id: '8c6608172db4de20f75f3a67abe7c078',
-        repo: 'breezestars.github.io',
-        owner: 'breezestars',
-        admin: "breezestars",
-        createIssueManually: false,
-        distractionFreeMode: false
-    })
-    gitalk.render('comment-container')
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2020/01/26/Upgrade-BIOS-and-EC-in-Wedge100BF/';
+        this.page.identifier = '2020/01/26/Upgrade-BIOS-and-EC-in-Wedge100BF/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'cmou' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
 
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
     </div>
 </div>
 

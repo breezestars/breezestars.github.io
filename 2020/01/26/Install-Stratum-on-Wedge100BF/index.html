@@ -19,7 +19,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.opennetworking.org/wp-content/uploads/2019/02/stratum-logo.png">
 <meta property="article:published_time" content="2020-01-26T05:56:11.000Z">
-<meta property="article:modified_time" content="2020-01-26T07:29:20.632Z">
+<meta property="article:modified_time" content="2020-01-26T07:32:11.377Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Stratum">
 <meta property="article:tag" content="Barefoot">
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 273 words)
+                    2 minutes read (About 309 words)
                 </span>
                 
                 
@@ -194,6 +194,10 @@
 
 <h3 id="Run-Stratum"><a href="#Run-Stratum" class="headerlink" title="Run Stratum"></a>Run Stratum</h3><p>Finally, just execute <code>./start-stratum-container.sh</code> and all is done</p>
 <p>The p4runtime server is listening in port 28000</p>
+<h3 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h3><ol>
+<li>default config director is under <code>/root</code>, it will be mount to container with path <code>/stratum_configs</code></li>
+<li>If you want to change the flags used in start Stratum, you could add <code>stratum.flags</code> file under <code>/root</code></li>
+</ol>
 
         </div>
         

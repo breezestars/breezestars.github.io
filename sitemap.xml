@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://blog.cmou.io/2020/10/19/Install-Stratum-on-Wedge100BF/</loc>
+    
+    <lastmod>2020-10-19T15:12:06.878Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.cmou.io/2020/01/26/Upgrade-BIOS-and-EC-in-Wedge100BF/</loc>
+    
+    <lastmod>2020-01-26T12:39:25.240Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.cmou.io/2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/</loc>
+    
+    <lastmod>2020-01-26T12:39:23.351Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.cmou.io/about/index.html</loc>
+    
+    <lastmod>2020-01-26T12:34:46.499Z</lastmod>
+    
+  </url>
+  
+</urlset>

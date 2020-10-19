@@ -16,24 +16,25 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Upgrade OpenBMC and CPLD in Wedge100BF - Chun-Ming Ou</title>
+<title>Install Stratum on Wedge100BF - Chun-Ming Ou</title>
 
 
-    <meta name="description" content="Prepare Edgecore Wedge100BF-32X USB with at least 4Gb OpenBMC and CPLD upgrade files  Please unzip all files and copy to USB root directory Note: If you need upgrade files, please contact switch vendo">
+    <meta name="description" content="Stratum: The open source project owned by Open Networking Foundation(ONF) The device we used is Edgecore Wedge100BF-32X, but all the step are also can be used in Edgecore Wedge100BF-65X Device Edgecor">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Upgrade OpenBMC and CPLD in Wedge100BF">
-<meta property="og:url" content="http://blog.cmou.io/2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/index.html">
+<meta property="og:title" content="Install Stratum on Wedge100BF">
+<meta property="og:url" content="http://blog.cmou.io/2020/10/19/Install-Stratum-on-Wedge100BF/index.html">
 <meta property="og:site_name" content="Chun-Ming Ou">
-<meta property="og:description" content="Prepare Edgecore Wedge100BF-32X USB with at least 4Gb OpenBMC and CPLD upgrade files  Please unzip all files and copy to USB root directory Note: If you need upgrade files, please contact switch vendo">
+<meta property="og:description" content="Stratum: The open source project owned by Open Networking Foundation(ONF) The device we used is Edgecore Wedge100BF-32X, but all the step are also can be used in Edgecore Wedge100BF-65X Device Edgecor">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/6/66/OpenBMC_logo.png">
-<meta property="article:published_time" content="2020-01-26T09:27:24.000Z">
-<meta property="article:modified_time" content="2020-01-26T12:39:23.351Z">
+<meta property="og:image" content="https://www.opennetworking.org/wp-content/uploads/2019/02/stratum-logo.png">
+<meta property="article:published_time" content="2020-10-19T05:56:11.000Z">
+<meta property="article:modified_time" content="2020-10-19T15:12:06.878Z">
 <meta property="article:author" content="Chun-Ming Ou">
+<meta property="article:tag" content="Stratum">
 <meta property="article:tag" content="Barefoot">
 <meta property="article:tag" content="Wedge100BF">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/6/66/OpenBMC_logo.png">
+<meta name="twitter:image" content="https://www.opennetworking.org/wp-content/uploads/2019/02/stratum-logo.png">
 
 
 
@@ -92,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/favicon.ico" alt="Upgrade OpenBMC and CPLD in Wedge100BF" height="28">
+                <img src="/images/favicon.ico" alt="Install Stratum on Wedge100BF" height="28">
             
             </a>
         </div>
@@ -142,7 +143,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="https://upload.wikimedia.org/wikipedia/commons/6/66/OpenBMC_logo.png" alt="Upgrade OpenBMC and CPLD in Wedge100BF">
+            <img class="thumbnail" src="https://www.opennetworking.org/wp-content/uploads/2019/02/stratum-logo.png" alt="Install Stratum on Wedge100BF">
         </span>
     </div>
     
@@ -150,17 +151,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-01-26T09:27:24.000Z">2020-01-26</time>
+                <time class="level-item has-text-grey" datetime="2020-10-19T05:56:11.000Z">2020-10-19</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Wedge100BF/">Wedge100BF</a>
+                <a class="has-link-grey -link" href="/categories/Stratum/">Stratum</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 205 words)
+                    3 minutes read (About 461 words)
                 </span>
                 
                 
@@ -174,42 +175,59 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Upgrade OpenBMC and CPLD in Wedge100BF
+                Install Stratum on Wedge100BF
             
         </h1>
         <div class="content">
-            <h2 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h2><ul>
-<li>Edgecore Wedge100BF-32X</li>
-<li>USB with at least 4Gb</li>
-<li>OpenBMC and CPLD upgrade files</li>
+            <p>Stratum: The open source project owned by Open Networking Foundation(ONF)</p>
+<p>The device we used is <strong>Edgecore Wedge100BF-32X</strong>, but all the step are also can be used in Edgecore Wedge100BF-65X</p>
+<h2 id="Device"><a href="#Device" class="headerlink" title="Device"></a>Device</h2><ul>
+<li>Edgecore Wedge100BF-32</li>
 </ul>
-<p>Please unzip all files and copy to USB root directory</p>
-<p>Note: If you need upgrade files, please contact switch vendor or following contact window</p>
-<p>Edgecore Network: <a href="mailto:jimmy_ou@edge-core.com">jimmy_ou@edge-core.com</a></p>
-<p><strong>*<u>Warning: It will be sugget to contact switch vendor to upgrade firmware, if user upgrade fail then switch might be brick. The switch will need to RMA and the vendor might charge for this.*</u></strong></p>
+<p><u><em>Notice: Need to check the switch firmware version, otherwise it might be stuck when loading ONL</em></u></p>
+<p>If you need upgrade firmware, please contact switch vendor or following contact window</p>
+<p>Edgecore Networks: <a href="mailto:jimmy_ou@edge-core.com">jimmy_ou@edge-core.com</a></p>
+<ul>
+<li><p>OpenBMC: 1.0.0.14</p>
+</li>
+<li><p>CPLD: 10.1</p>
+</li>
+<li><p>BIOS: R1.00.E2 (8/29/2018)</p>
+</li>
+<li><p>EC: R04.E01(10/10/2018)</p>
 <a id="more"></a>
 
-<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><h3 id="connect-to-console"><a href="#connect-to-console" class="headerlink" title="connect to console"></a>connect to console</h3><p>After OpenBMC is ready, loginin with <code>root/0penBmc</code> </p>
-<h4 id="Upgrade-OpenBMC"><a href="#Upgrade-OpenBMC" class="headerlink" title="Upgrade OpenBMC"></a>Upgrade OpenBMC</h4><p>Confirm original OpenBMC version</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/issue</span><br></pre></td></tr></table></figure>
 
-<p>Check MTD configuration</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/mtd</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><h3 id="Install-ONL-which-contained-ONLPv2"><a href="#Install-ONL-which-contained-ONLPv2" class="headerlink" title="Install ONL which contained ONLPv2"></a>Install ONL which contained ONLPv2</h3><p>ONL - Debian 9, kernel 4.14.49</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onie-nos-install https://github.com/opennetworkinglab/OpenNetworkLinux/releases/download/onlpv2-dev-1.1.1/ONL-onf-ONLPv2_ONL-OS_2019-12-14.0139-2796867_AMD64_INSTALLED_INSTALLER</span><br></pre></td></tr></table></figure>
 
-<p>Install new OpenBMC image(flash-mavericks) to MTD(flash0)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flashcp -v flash-mavericks /dev/mtd5</span><br></pre></td></tr></table></figure>
+<h3 id="Install-Docker"><a href="#Install-Docker" class="headerlink" title="Install Docker"></a>Install Docker</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://get.docker.io | bash</span><br></pre></td></tr></table></figure>
 
-<p>and  <code>Reboot</code></p>
-<h4 id="Upgrade-CPLD"><a href="#Upgrade-CPLD" class="headerlink" title="Upgrade CPLD"></a>Upgrade CPLD</h4><p>Confirm original CPLD version</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">i2cget -f -y 12 0x31 0x1</span><br><span class="line">i2cget -f -y 12 0x31 0x2</span><br></pre></td></tr></table></figure>
+<h3 id="Pull-Stratum-container-image"><a href="#Pull-Stratum-container-image" class="headerlink" title="Pull Stratum container image"></a>Pull Stratum container image</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull stratumproject/stratum-bf:9.1.0-4.14.49-OpenNetworkLinux</span><br></pre></td></tr></table></figure>
 
-<p>Set <code>CPLD_UPPER_JTAG_SEL</code> and <code>CPLD_JTAG_SEL</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">devmem 0x1e6e2080 32 0xE0CA0002</span><br><span class="line"><span class="built_in">echo</span> out &gt; /tmp/gpionames/CPLD_JTAG_SEL/direction</span><br><span class="line"><span class="built_in">echo</span> 1 &gt; /tmp/gpionames/CPLD_JTAG_SEL/value</span><br></pre></td></tr></table></figure>
+<h3 id="Create-Stratum-script"><a href="#Create-Stratum-script" class="headerlink" title="Create Stratum script"></a>Create Stratum script</h3><p>Create a shell script called “start-stratum-container.sh” and <code>chmod +x start-stratum-container.sh</code></p>
+<p>The script contain following code</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># Copyright 2018-present Open Networking Foundation</span></span><br><span class="line"><span class="comment"># SPDX-License-Identifier: Apache-2.0</span></span><br><span class="line"><span class="built_in">set</span> -ex</span><br><span class="line"></span><br><span class="line"><span class="comment"># Try to load the platform string if not already set.</span></span><br><span class="line"><span class="keyword">if</span> [[ -z <span class="string">"<span class="variable">$PLATFORM</span>"</span> ]] &amp;&amp; [[ -f <span class="string">"/etc/onl/platform"</span> ]]; <span class="keyword">then</span></span><br><span class="line">    PLATFORM=$(cat /etc/onl/platform)</span><br><span class="line"><span class="keyword">elif</span> [[ -z <span class="string">"<span class="variable">$PLATFORM</span>"</span> ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"PLATFORM variable must be set manually on non-ONL switches."</span></span><br><span class="line">    <span class="built_in">exit</span> 255</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Mount ONL related directories, if they exist.</span></span><br><span class="line"><span class="keyword">if</span> [ -d <span class="string">"/etc/onl"</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="comment"># Use ONLP to find platform and its library</span></span><br><span class="line">    ONLP_MOUNT=$(ls /lib/**/libonlp* | awk <span class="string">'&#123;print "-v " $1 ":" $1 " " &#125;'</span>)</span><br><span class="line">    ONLP_MOUNT=<span class="string">"<span class="variable">$ONLP_MOUNT</span> \</span></span><br><span class="line"><span class="string">              -v /lib/platform-config:/lib/platform-config \</span></span><br><span class="line"><span class="string">              -v /etc/onl:/etc/onl"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -n <span class="string">"<span class="variable">$FLAG_FILE</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">    FLAG_FILE_MOUNT=<span class="string">"-v <span class="variable">$FLAG_FILE</span>:/etc/stratum/stratum.flags"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -n <span class="string">"<span class="variable">$CHASSIS_CONFIG</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">    CHASSIS_CONFIG_MOUNT=<span class="string">"-v <span class="variable">$CHASSIS_CONFIG</span>:/etc/stratum/<span class="variable">$PLATFORM</span>/chassis_config.pb.txt"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">LOG_DIR=<span class="variable">$&#123;LOG_DIR:-/var/log&#125;</span></span><br><span class="line">SDE_VERSION=<span class="variable">$&#123;SDE_VERSION:-9.2.0&#125;</span></span><br><span class="line">KERNEL_VERSION=$(uname -r)</span><br><span class="line">DOCKER_IMAGE=<span class="variable">$&#123;DOCKER_IMAGE:-stratumproject/stratum-bf&#125;</span></span><br><span class="line">DOCKER_IMAGE_TAG=<span class="variable">$&#123;DOCKER_IMAGE_TAG:-$SDE_VERSION-$KERNEL_VERSION&#125;</span></span><br><span class="line"></span><br><span class="line">docker run -it --rm --privileged \</span><br><span class="line">    -v /dev:/dev -v /sys:/sys  \</span><br><span class="line">    -v /lib/modules/$(uname -r):/lib/modules/$(uname -r) \</span><br><span class="line">    --env PLATFORM=<span class="variable">$PLATFORM</span> \</span><br><span class="line">    <span class="variable">$ONLP_MOUNT</span> \</span><br><span class="line">    -p 28000:28000 \</span><br><span class="line">    -p 9339:9339 \</span><br><span class="line">    -p 9559:9559 \</span><br><span class="line">    <span class="variable">$FLAG_FILE_MOUNT</span> \</span><br><span class="line">    <span class="variable">$CHASSIS_CONFIG_MOUNT</span> \</span><br><span class="line">    -v <span class="variable">$LOG_DIR</span>:/var/<span class="built_in">log</span>/stratum \</span><br><span class="line">    <span class="variable">$DOCKER_IMAGE</span>:<span class="variable">$DOCKER_IMAGE_TAG</span> \</span><br><span class="line">    <span class="variable">$@</span></span><br></pre></td></tr></table></figure>
 
-<p>Install CPLD code</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jbi -r -aPROGRAM -gc102 -gi101 -go103 -gs100 &lt;file path&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>*<u>Do not power off DUT during installation. System shall reboot automatically after updating lower CPLD code*</u></strong></p>
+<h3 id="Run-Stratum"><a href="#Run-Stratum" class="headerlink" title="Run Stratum"></a>Run Stratum</h3><p>Finally, just execute <code>./start-stratum-container.sh</code> and all is done</p>
+<p>The p4runtime server is listening in port 28000</p>
+<h3 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h3><ol>
+<li>default config director is under <code>/root</code>, it will be mount to container with path <code>/stratum_configs</code></li>
+<li>If you want to change the flags used in start Stratum, you could add <code>stratum.flags</code> file under <code>/root</code></li>
+</ol>
+<h3 id="Dependent-package"><a href="#Dependent-package" class="headerlink" title="Dependent package"></a>Dependent package</h3><ol>
+<li><p>ONL 4.14.151kernek header</p>
+<p><a href="http://cloud.cmou.io:10180/s/Lq2atH4koj79oq6">http://cloud.cmou.io:10180/s/Lq2atH4koj79oq6</a></p>
+</li>
+<li><p>ONL 4.14.49 kernel header</p>
+<p><a href="http://cloud.cmou.io:10180/s/4qcgXP3LL32MH8f">http://cloud.cmou.io:10180/s/4qcgXP3LL32MH8f</a></p>
+</li>
+<li><p>ONL - Debian 9 , kernel 4.14.151</p>
+<p><a href="http://cloud.cmou.io:10180/s/LcdJDApnGY5WsGx">http://cloud.cmou.io:10180/s/LcdJDApnGY5WsGx</a></p>
+</li>
+</ol>
 
         </div>
         
@@ -217,7 +235,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Barefoot/" rel="tag">Barefoot</a>, <a class="has-link-grey -link" href="/tags/Wedge100BF/" rel="tag">Wedge100BF</a>
+                    <a class="has-link-grey -link" href="/tags/Barefoot/" rel="tag">Barefoot</a>, <a class="has-link-grey -link" href="/tags/Stratum/" rel="tag">Stratum</a>, <a class="has-link-grey -link" href="/tags/Wedge100BF/" rel="tag">Wedge100BF</a>
                 </div>
             </div>
         </div>
@@ -234,17 +252,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/10/19/Install-Stratum-on-Wedge100BF/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Install Stratum on Wedge100BF</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/01/26/Upgrade-BIOS-and-EC-in-Wedge100BF/">
-                <span class="level-item">Upgrade BIOS and EC in Wedge100BF</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/">
+                <span class="level-item">Upgrade OpenBMC and CPLD in Wedge100BF</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -260,8 +271,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://blog.cmou.io/2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/';
-        this.page.identifier = '2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/';
+        this.page.url = 'http://blog.cmou.io/2020/10/19/Install-Stratum-on-Wedge100BF/';
+        this.page.identifier = '2020/10/19/Install-Stratum-on-Wedge100BF/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -398,26 +409,42 @@
                     Catalogue
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#Prepare">
+        <a class="is-flex" href="#Device">
         <span class="has-mr-6">1</span>
-        <span>Prepare</span>
+        <span>Device</span>
         </a></li><li>
         <a class="is-flex" href="#Steps">
         <span class="has-mr-6">2</span>
         <span>Steps</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#connect-to-console">
+        <a class="is-flex" href="#Install-ONL-which-contained-ONLPv2">
         <span class="has-mr-6">2.1</span>
-        <span>connect to console</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#Upgrade-OpenBMC">
-        <span class="has-mr-6">2.1.1</span>
-        <span>Upgrade OpenBMC</span>
+        <span>Install ONL which contained ONLPv2</span>
         </a></li><li>
-        <a class="is-flex" href="#Upgrade-CPLD">
-        <span class="has-mr-6">2.1.2</span>
-        <span>Upgrade CPLD</span>
-        </a></li></ul></li></ul></li></ul>
+        <a class="is-flex" href="#Install-Docker">
+        <span class="has-mr-6">2.2</span>
+        <span>Install Docker</span>
+        </a></li><li>
+        <a class="is-flex" href="#Pull-Stratum-container-image">
+        <span class="has-mr-6">2.3</span>
+        <span>Pull Stratum container image</span>
+        </a></li><li>
+        <a class="is-flex" href="#Create-Stratum-script">
+        <span class="has-mr-6">2.4</span>
+        <span>Create Stratum script</span>
+        </a></li><li>
+        <a class="is-flex" href="#Run-Stratum">
+        <span class="has-mr-6">2.5</span>
+        <span>Run Stratum</span>
+        </a></li><li>
+        <a class="is-flex" href="#Options">
+        <span class="has-mr-6">2.6</span>
+        <span>Options</span>
+        </a></li><li>
+        <a class="is-flex" href="#Dependent-package">
+        <span class="has-mr-6">2.7</span>
+        <span>Dependent package</span>
+        </a></li></ul></li></ul>
             </div>
         </div>
     </div>
@@ -442,7 +469,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/favicon.ico" alt="Upgrade OpenBMC and CPLD in Wedge100BF" height="28">
+                    <img src="/images/favicon.ico" alt="Install Stratum on Wedge100BF" height="28">
                 
                 </a>
                 <p class="is-size-7">

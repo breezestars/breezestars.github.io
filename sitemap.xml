@@ -2,30 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.cmou.io/2020/10/19/Install-Stratum-on-Wedge100BF/</loc>
+    <loc>http://blog.cmou.io/2021/05/15/Debian-10-ONIE-installer/</loc>
     
-    <lastmod>2020-10-19T15:15:00.387Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.cmou.io/2020/01/26/Upgrade-BIOS-and-EC-in-Wedge100BF/</loc>
-    
-    <lastmod>2020-01-26T12:39:25.240Z</lastmod>
+    <lastmod>2021-05-15T05:36:15.082Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.cmou.io/2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/</loc>
+    <loc>http://blog.cmou.io/2021/03/04/Tech-Agora/</loc>
     
-    <lastmod>2020-01-26T12:39:23.351Z</lastmod>
+    <lastmod>2021-03-03T23:52:28.409Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.cmou.io/about/index.html</loc>
     
-    <lastmod>2020-01-26T12:34:46.499Z</lastmod>
+    <lastmod>2021-03-03T23:46:42.194Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.cmou.io/2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/</loc>
+    
+    <lastmod>2021-03-03T23:46:42.193Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.cmou.io/2020/01/26/Upgrade-BIOS-and-EC-in-Wedge100BF/</loc>
+    
+    <lastmod>2021-03-03T23:46:42.192Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.cmou.io/2020/10/19/Install-Stratum-on-Wedge100BF/</loc>
+    
+    <lastmod>2021-03-03T23:46:42.191Z</lastmod>
     
   </url>
   

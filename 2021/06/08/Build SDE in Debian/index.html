@@ -16,24 +16,25 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Upgrade OpenBMC and CPLD in Wedge100BF - Chun-Ming Ou</title>
+<title>Build SDE in Debian 9 - Chun-Ming Ou</title>
 
 
-    <meta name="description" content="Prepare Edgecore Wedge100BF-32X USB with at least 4Gb OpenBMC and CPLD upgrade files  Please unzip all files and copy to USB root directory Note: If you need upgrade files, please contact switch vendo">
+    <meta name="description" content="This note is to remember me how to install SDE in debian. EnvironmentOS: Debian 9 SDE: 9.5.0 This environment shows how to build SDE in China. PrepareVPN or other tools. Should open a proxy port for i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Upgrade OpenBMC and CPLD in Wedge100BF">
-<meta property="og:url" content="http://blog.cmou.io/2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/index.html">
+<meta property="og:title" content="Build SDE in Debian 9">
+<meta property="og:url" content="http://blog.cmou.io/2021/06/08/Build%20SDE%20in%20Debian/index.html">
 <meta property="og:site_name" content="Chun-Ming Ou">
-<meta property="og:description" content="Prepare Edgecore Wedge100BF-32X USB with at least 4Gb OpenBMC and CPLD upgrade files  Please unzip all files and copy to USB root directory Note: If you need upgrade files, please contact switch vendo">
+<meta property="og:description" content="This note is to remember me how to install SDE in debian. EnvironmentOS: Debian 9 SDE: 9.5.0 This environment shows how to build SDE in China. PrepareVPN or other tools. Should open a proxy port for i">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/6/66/OpenBMC_logo.png">
-<meta property="article:published_time" content="2020-01-26T09:27:24.000Z">
-<meta property="article:modified_time" content="2021-03-03T23:46:42.193Z">
+<meta property="og:image" content="http://blog.cmou.io/images/og_image.png">
+<meta property="article:published_time" content="2021-06-08T05:48:14.000Z">
+<meta property="article:modified_time" content="2021-06-07T16:17:42.276Z">
 <meta property="article:author" content="Chun-Ming Ou">
 <meta property="article:tag" content="Wedge100BF">
-<meta property="article:tag" content="Barefoot">
+<meta property="article:tag" content="Debian">
+<meta property="article:tag" content="buster">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/6/66/OpenBMC_logo.png">
+<meta name="twitter:image" content="http://blog.cmou.io/images/og_image.png">
 
 
 
@@ -92,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/favicon.ico" alt="Upgrade OpenBMC and CPLD in Wedge100BF" height="28">
+                <img src="/images/favicon.ico" alt="Build SDE in Debian 9" height="28">
             
             </a>
         </div>
@@ -140,17 +141,11 @@
                 <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main">
 <div class="card">
     
-    <div class="card-image">
-        <span  class="image is-7by1">
-            <img class="thumbnail" src="https://upload.wikimedia.org/wikipedia/commons/6/66/OpenBMC_logo.png" alt="Upgrade OpenBMC and CPLD in Wedge100BF">
-        </span>
-    </div>
-    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-01-26T09:27:24.000Z">2020-01-26</time>
+                <time class="level-item has-text-grey" datetime="2021-06-08T05:48:14.000Z">2021-06-08</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Wedge100BF/">Wedge100BF</a>
@@ -160,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 205 words)
+                    a few seconds read (About 99 words)
                 </span>
                 
                 
@@ -174,42 +169,24 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Upgrade OpenBMC and CPLD in Wedge100BF
+                Build SDE in Debian 9
             
         </h1>
         <div class="content">
-            <h2 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h2><ul>
-<li>Edgecore Wedge100BF-32X</li>
-<li>USB with at least 4Gb</li>
-<li>OpenBMC and CPLD upgrade files</li>
-</ul>
-<p>Please unzip all files and copy to USB root directory</p>
-<p>Note: If you need upgrade files, please contact switch vendor or following contact window</p>
-<p>Edgecore Network: <a href="mailto:jimmy_ou@edge-core.com">jimmy_ou@edge-core.com</a></p>
-<p><strong>*<u>Warning: It will be sugget to contact switch vendor to upgrade firmware, if user upgrade fail then switch might be brick. The switch will need to RMA and the vendor might charge for this.*</u></strong></p>
-<a id="more"></a>
-
-<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><h3 id="connect-to-console"><a href="#connect-to-console" class="headerlink" title="connect to console"></a>connect to console</h3><p>After OpenBMC is ready, loginin with <code>root/0penBmc</code> </p>
-<h4 id="Upgrade-OpenBMC"><a href="#Upgrade-OpenBMC" class="headerlink" title="Upgrade OpenBMC"></a>Upgrade OpenBMC</h4><p>Confirm original OpenBMC version</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/issue</span><br></pre></td></tr></table></figure>
-
-<p>Check MTD configuration</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/mtd</span><br></pre></td></tr></table></figure>
-
-<p>Install new OpenBMC image(flash-mavericks) to MTD(flash0)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flashcp -v flash-mavericks /dev/mtd5</span><br></pre></td></tr></table></figure>
-
-<p>and  <code>Reboot</code></p>
-<h4 id="Upgrade-CPLD"><a href="#Upgrade-CPLD" class="headerlink" title="Upgrade CPLD"></a>Upgrade CPLD</h4><p>Confirm original CPLD version</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">i2cget -f -y 12 0x31 0x1</span><br><span class="line">i2cget -f -y 12 0x31 0x2</span><br></pre></td></tr></table></figure>
-
-<p>Set <code>CPLD_UPPER_JTAG_SEL</code> and <code>CPLD_JTAG_SEL</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">devmem 0x1e6e2080 32 0xE0CA0002</span><br><span class="line"><span class="built_in">echo</span> out &gt; /tmp/gpionames/CPLD_JTAG_SEL/direction</span><br><span class="line"><span class="built_in">echo</span> 1 &gt; /tmp/gpionames/CPLD_JTAG_SEL/value</span><br></pre></td></tr></table></figure>
-
-<p>Install CPLD code</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jbi -r -aPROGRAM -gc102 -gi101 -go103 -gs100 &lt;file path&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>*<u>Do not power off DUT during installation. System shall reboot automatically after updating lower CPLD code*</u></strong></p>
+            <p>This note is to remember me how to install SDE in debian.</p>
+<h2 id="Environment"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</h2><p>OS: Debian 9</p>
+<p>SDE: 9.5.0</p>
+<p>This environment shows how to build SDE in China.</p>
+<h2 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h2><p>VPN or other tools. Should open a proxy port for internal/VMs.</p>
+<p>In this note the proxy port will be 8000.</p>
+<h2 id="Install-step"><a href="#Install-step" class="headerlink" title="Install step"></a>Install step</h2><ol>
+<li>install dependencies for Debian 9</li>
+<li>set ALL_PROXY to proxy server ip address and port</li>
+<li>pip install pysocks before compile SDE</li>
+<li>add SDE_INSTALL/bin into $PATH</li>
+<li>execute p4studio_build.py to compile SDE</li>
+</ol>
+<h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><p>If there have any question, welcome sned an email to me. <a href="mailto:jimmy_ou@edge-core.com">jimmy_ou@edge-core.com</a></p>
 
         </div>
         
@@ -217,7 +194,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Barefoot/" rel="tag">Barefoot</a>, <a class="has-link-grey -link" href="/tags/Wedge100BF/" rel="tag">Wedge100BF</a>
+                    <a class="has-link-grey -link" href="/tags/Debian/" rel="tag">Debian</a>, <a class="has-link-grey -link" href="/tags/Wedge100BF/" rel="tag">Wedge100BF</a>, <a class="has-link-grey -link" href="/tags/buster/" rel="tag">buster</a>
                 </div>
             </div>
         </div>
@@ -234,17 +211,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/10/19/Install-Stratum-on-Wedge100BF/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Install Stratum on Wedge100BF</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/01/26/Upgrade-BIOS-and-EC-in-Wedge100BF/">
-                <span class="level-item">Upgrade BIOS and EC in Wedge100BF</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2021/05/15/Debian-10-ONIE-installer/">
+                <span class="level-item">Debian 10 ONIE installer</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -260,8 +230,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://blog.cmou.io/2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/';
-        this.page.identifier = '2020/01/26/Upgrade-OpenBMC-and-CPLD-in-Wedge100BF/';
+        this.page.url = 'http://blog.cmou.io/2021/06/08/Build%20SDE%20in%20Debian/';
+        this.page.identifier = '2021/06/08/Build SDE in Debian/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -398,26 +368,22 @@
                     Catalogue
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#Prepare">
+        <a class="is-flex" href="#Environment">
         <span class="has-mr-6">1</span>
+        <span>Environment</span>
+        </a></li><li>
+        <a class="is-flex" href="#Prepare">
+        <span class="has-mr-6">2</span>
         <span>Prepare</span>
         </a></li><li>
-        <a class="is-flex" href="#Steps">
-        <span class="has-mr-6">2</span>
-        <span>Steps</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#connect-to-console">
-        <span class="has-mr-6">2.1</span>
-        <span>connect to console</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#Upgrade-OpenBMC">
-        <span class="has-mr-6">2.1.1</span>
-        <span>Upgrade OpenBMC</span>
+        <a class="is-flex" href="#Install-step">
+        <span class="has-mr-6">3</span>
+        <span>Install step</span>
         </a></li><li>
-        <a class="is-flex" href="#Upgrade-CPLD">
-        <span class="has-mr-6">2.1.2</span>
-        <span>Upgrade CPLD</span>
-        </a></li></ul></li></ul></li></ul>
+        <a class="is-flex" href="#Other">
+        <span class="has-mr-6">4</span>
+        <span>Other</span>
+        </a></li></ul>
             </div>
         </div>
     </div>
@@ -442,7 +408,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/favicon.ico" alt="Upgrade OpenBMC and CPLD in Wedge100BF" height="28">
+                    <img src="/images/favicon.ico" alt="Build SDE in Debian 9" height="28">
                 
                 </a>
                 <p class="is-size-7">

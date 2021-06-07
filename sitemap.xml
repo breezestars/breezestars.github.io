@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.cmou.io/2021/06/08/Build%20SDE%20in%20Debian/</loc>
+    
+    <lastmod>2021-06-07T16:17:42.276Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.cmou.io/2021/05/15/Debian-10-ONIE-installer/</loc>
     
     <lastmod>2021-05-15T05:36:15.082Z</lastmod>
